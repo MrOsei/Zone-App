@@ -1,0 +1,40 @@
+{
+  "name": "zone-social",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "NODE_ENV=development tsx server/index.ts",
+    "build": "next build",
+    "start": "NODE_ENV=production tsx server/index.ts",
+    "start:next": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "test": "tsx --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.11.1",
+    "lucide-react": "^1.17.0",
+    "next": "^16.4.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "tsx": "^4.23.15",
+    "ws": "^8.23.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/ws": "^8.18.2",
+    "eslint": "^9",
+    "eslint-config-next": "^16.4.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
