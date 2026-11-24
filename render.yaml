@@ -2,20 +2,15 @@ services:
   - type: web
     name: zone-social
     runtime: node
-    plan: starter
+    plan: free
     region: oregon
     numInstances: 1
     buildCommand: npm ci && npm run build
     startCommand: npm start
     healthCheckPath: /api/health
     autoDeployTrigger: commit
-    maxShutdownDelaySeconds: 30
     envVars:
       - key: NODE_ENV
         value: production
       - key: DATA_DIR
-        value: /var/data/zone
-    disk:
-      name: zone-data
-      mountPath: /var/data
-      sizeGB: 1
+        value: .data
